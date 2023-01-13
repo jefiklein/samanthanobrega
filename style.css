@@ -1,0 +1,524 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "MOKOTO";
+    src: url(fontes/Mokoto\ Glitch.otf);
+}
+
+:root{
+    --cor-principal-01: #007DE7;
+    --cor-principal-02: #015499;
+    --cor-principal-03: #004076;
+    --cor-principal-04: #001C34;
+    
+    --cor-secundaria-01: #04FC49;
+    --cor-secundaria-02: #0A9603;
+
+    --cor-fundo-01: #00080F;
+
+    --cor-texto-01: #FFF;
+
+    --padding-lateral-header: 1.5rem;
+    --transition-time: 0.1s;
+    --gap-elementos: 4rem;
+    --padding-lateral-01: 5rem;
+}
+
+*{
+    font-family: sans-serif;
+    color: var(--cor-texto-01);
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+}
+
+body{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: var(--gap-elementos);
+    scroll-behavior: smooth;
+    background-color: var(--cor-fundo-01);
+}
+
+.negrito{
+    font-weight: bold;
+}
+
+.texto-sombreado{
+    text-shadow: 2px 2px 0px #000;
+}
+
+
+.botao-cor-secundaria{
+    max-width: fit-content;
+    padding: 1em 2em;
+    background-image: linear-gradient(to bottom, var(--cor-secundaria-01), var(--cor-secundaria-02));
+    border-radius: 3em;
+    letter-spacing: 0.05em;
+    font-weight: bolder;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.6);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    filter: brightness(80%);
+    transition: filter var(--transition-time), transform var(--transition-time);
+}
+.botao-cor-secundaria:hover{
+    filter: brightness(100%);
+    transform: scale(1.05);
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+
+.nome-logo{
+    font-family: "MOKOTO";
+    font-weight: bold;
+    font-size: 1.3em;
+    letter-spacing: 0.08em;
+}
+
+
+.section-com-background{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 3.0rem 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+    box-shadow: 0 0 1.25rem 1.25rem #007be756;
+    text-align: center;
+}
+.section-com-background h1 > span{
+    color: var(--cor-fundo-01);
+}
+.section-com-background > *{
+    max-width: 60rem;
+}
+
+
+/* 
+####### ESTILOS DO HEADER ################################################################################
+*/
+
+header{
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, #0000006b, #0000006b),
+        url("./imagens/IMG_3152_Acinzentado_3000x2000.png")
+    ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 0rem -5rem 5rem var(--cor-fundo-01),
+        inset 0rem -2rem 2rem var(--cor-fundo-01)
+    ;
+}
+
+#header__container-logo{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    padding-top: 2.0rem;
+}
+
+#header__container-conteudo{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3.5rem;
+    padding: 0px var(--padding-lateral-header);
+    font-family: sans-serif;
+    max-width: 50rem;
+    font-size: 1.2em;
+}
+
+#header__container-conteudo > p{
+    font-size: 1.3em;
+}
+
+#header__container-conteudo > button{
+    font-size: 1.0em;
+}
+
+#header__container-seta-baixo{
+    display: flex;
+    justify-content: center;
+    padding: 1.0rem;
+}
+
+#header__borda-seta-baixo{
+    padding: 0.1rem 1.0rem;
+    border: 2px solid white;
+    border-radius: 2rem;
+    overflow: hidden;
+    transform: scale(0.9);
+}
+
+#header__seta-baixo{
+    width: 32px;
+    animation: movimento-seta-baixo 0.8s ease-in-out 0s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes movimento-seta-baixo {
+    from{
+        opacity: 50%;
+        transform: translateY(-0.9rem);
+    }
+    to{
+        opacity: 100%;
+        transform: translateY(0.9rem);
+    }
+}
+
+
+/* 
+####### ESTILOS DO MAIN ################################################################################
+*/
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: var(--gap-elementos);
+}
+
+#navbar-oculta{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 0.5rem 1rem;
+    display: none;
+    font-size: 0.66em;
+    z-index: 999;
+}
+#navbar-oculta.ativo{
+    display: block;
+}
+
+#navbar-oculta__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    border: 1px solid white;
+    border-radius: 3rem;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.45);
+
+    opacity: 0%;
+    transition: opacity 0.3s;
+}
+#navbar-oculta__container.ativo{
+    opacity: 100%;
+    transition: opacity 0.3s;
+}
+
+#navbar-oculta__container > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+#navbar-oculta__botao-inicio{
+    padding: 1em;
+    color: var(--cor-principal-01);
+    font-weight: bold;
+    font-size: 1.0em;
+    letter-spacing: 0.05em;
+}
+#navbar-oculta__botao-inicio:hover{
+    text-decoration: underline;
+}
+
+#navbar-oculta__botao-ver-planos{
+    padding: 1em 2em;
+    background-image: linear-gradient(to bottom, var(--cor-principal-01), var(--cor-principal-03));
+    border-radius: 3em;
+    letter-spacing: 0.05em;
+    font-size: 1.0em;
+    font-weight: bolder;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.6);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+#navbar-oculta__botao-ver-planos:hover{
+    filter: brightness(130%);
+    text-decoration: underline;
+}
+
+
+
+/* ## DIV JORNADA CLIENTE ########################################## */
+
+#main__div-jornada-cliente{
+    background-image: linear-gradient(to bottom, #007be7ab, #004076ab),
+    url("./imagens/IMG_3152_Acinzentado_3000x2000.png");
+}
+
+#div-jornada-cliente__container-texto{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    font-size: 1.25em;
+}
+
+#div-jornada-cliente__container-texto > img{
+    width: 96px;
+}
+
+
+
+/* ## DIV COMO FUNCIONA O PROCESSO ################################ */
+
+#main__div-como-funciona-processo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 0 var(--padding-lateral-01);
+    text-align: center;
+
+    overflow: visible; /* para o scale dos cards */
+}
+
+#div-como-funciona-processo__container-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.div-como-funciona-processo__card{
+    max-width: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2.0rem 1.25rem;
+    border-radius: 3rem;
+    border: 2px solid white;
+    
+    backdrop-filter: blur(5px);
+    transition: transform var(--transition-time) ease-out;
+}
+.div-como-funciona-processo__card:hover{
+    z-index: 99;
+    transform: scale(1.1);
+}
+.div-como-funciona-processo__card > img{
+    width: 128px;
+}
+.div-como-funciona-processo__card.ultimo{
+    max-width: 100%;
+    padding: 2.0rem 3.75rem;
+}
+
+
+
+/* ## DIV 60 DIAS OTIMIZADOS ########################################## */
+
+#main__div-60-dias{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 var(--padding-lateral-01);
+    text-align: center;
+}
+
+#main__div-60-dias span{
+    color: var(--cor-principal-01);
+}
+
+#main__div-60-dias > p{
+    font-size: 1.1em;
+}
+
+#link-moveis-planejados{
+    max-width: 15rem;
+    cursor: pointer;
+    filter: brightness(60%);
+    transition: filter var(--transition-time);
+}
+#link-moveis-planejados:hover{
+    filter: brightness(100%);
+}
+
+
+
+/* ## DIV COMO FUNCIONA O SERVICO ##################################### */
+
+#main__div-como-funciona-servico{
+    background-image: linear-gradient(to bottom, #007be7ab, #004076ab),
+    url("./imagens/IMG_3152_Acinzentado_3000x2000.png");
+}
+
+#main__div-como-funciona-servico > p{
+    font-size: 1.1em;
+    letter-spacing: 0.075em;
+}
+
+
+
+/* ## DIV PLANOS DE SERVICO ########################################## */
+
+#main__div-planos-servicos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#div-planos-servicos__container-cards{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 1.5rem;
+}
+
+.card-plano-servico{
+    max-width: 16em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    border-radius: 3rem;
+    border: 2px solid white;
+    font-weight: bold;
+
+    backdrop-filter: blur(5px);
+    transition: transform var(--transition-time), backdrop-filter var(--transition-time);
+}
+.card-plano-servico:hover{
+    z-index: 99;
+    transform: scale(1.1);
+    backdrop-filter: blur(5px) brightness(350%);
+}
+.card-plano-servico img{
+    max-width: 96px;
+}
+.card-plano-servico > h2, .card-plano-servico__preco{
+   text-align: center;
+}
+.card-plano-servico span{
+    color: var(--cor-principal-01);
+}
+.card-plano-servico > ul{
+    list-style: none;
+}
+.card-plano-servico > ul > li::before{
+    content: "• ";
+}
+.card-plano-servico__container-imagens{
+    display: flex;
+    gap: 1rem;
+}
+
+
+
+/* ## DIV FALE CONOSCO ################################################# */
+
+#main__div-fale-conosco{
+    background-image: linear-gradient(to bottom, #007be7ab, #004076ab),
+    url("./imagens/IMG_3152_Acinzentado_3000x2000.png");
+    font-size: 1.1em;
+}
+
+.botao-whatsapp{
+    padding: 0.75em 1.5em;
+    font-size: 1.1em;
+}
+
+
+
+/* ## DIV PERGUNTAS FREQUENTES ######################################## */
+
+#main__div-perguntas-frequentes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; 
+}
+
+#div-perguntas-frequentes__container-perguntas{
+    max-width: 60rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.div-pergunta{
+    backdrop-filter: brightness(300%);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.div-pergunta:hover{
+    backdrop-filter: brightness(450%);
+    cursor: pointer;
+}
+.div-pergunta.ativo{
+    backdrop-filter: brightness(450%);
+}
+
+.div-pergunta > h2{
+    color: var(--cor-principal-01);
+}
+
+.div-pergunta > p{
+    padding-top: 0.75rem;
+    display: none;
+    max-height: 0px;
+    overflow: hidden;
+}
+.div-pergunta.ativo > p{
+    display: block;
+    max-height: 999px;
+}
+
+
+
+/* 
+####### ESTILOS DO FOOTER ##############################################################################
+*/
+
+footer{
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.075em;
+    box-shadow: 0px -1rem 1rem var(--cor-principal-04);
+}
+footer > section{
+    padding: 0.75rem;
+}
+
+#footer__sec-infos{
+    background-color: var(--cor-principal-02);
+}
+#footer__sec-infos .nome-logo{
+    font-size: 0.9em;
+}
+
+#footer__sec-creditos{
+    background-color: var(--cor-principal-04);
+}
+
+
+
+
+
+
