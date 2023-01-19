@@ -24,7 +24,7 @@
 
     --padding-lateral-header: 1.5rem;
     --transition-time: 0.1s;
-    --gap-elementos: 4rem;
+    --gap-elementos: 8rem;
     --padding-lateral-01: 5rem;
     --padding-lateral-01-mobile: 1rem;
 }
@@ -112,7 +112,7 @@ button:hover{
 }
 
 p, button{
-    font-size: 1.25em;
+    font-size: 1.0em;
 }
 
 @media (max-width: 720px){
@@ -160,7 +160,7 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 3.5em;
+    gap: 3.0em;
     padding: 0px var(--padding-lateral-header);
     font-family: sans-serif;
     max-width: 50rem;
@@ -272,7 +272,8 @@ main{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
+    font-size: 1.05em;
 }
 
 #navbar-oculta__botao-inicio{
@@ -377,10 +378,11 @@ main{
     border-radius: 3rem;
     border: 2px solid white;
     backdrop-filter: blur(5px);
+    transition: transform var(--transition-time);
 }
 .div-como-funciona-processo__card:hover{
     z-index: 99;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 .div-como-funciona-processo__card > img{
     width: 128px;
@@ -488,6 +490,7 @@ main{
 }
 .card-plano-servico > ul{
     list-style: none;
+    font-weight: normal;
 }
 .card-plano-servico > ul > li::before{
     content: "• ";
@@ -567,7 +570,7 @@ main{
     max-height: 999px;
 }
 
-@media (max-width: 720px){
+@media (max-width: 1000px){
     #main__div-perguntas-frequentes{
         padding: 0px var(--padding-lateral-01-mobile);
     }
