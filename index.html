@@ -65,7 +65,7 @@
 
     <main>
         <div id="navbar-oculta" class="">
-            <div id="navbar-oculta__container" class="">
+            <div id="navbar-oculta__container">
                 <p class="nome-logo texto-sombreado">CAUEXPERIENCE</p>
                 <div>
                     <button id="navbar-oculta__botao-inicio" onclick="onClickBotaoInicio()">INÍCIO</button>
@@ -189,7 +189,7 @@
             <!-- <h1 class="texto-sombreado">FALE CONOSCO E <span>MARQUE UMA REUNIÃO</span></h1> -->
             <h1 class="texto-sombreado">QUERO CONTRATAR <span>AGORA</span></h1>
             <p class="texto-sombreado">Quer contratar nosso serviço e aumentar seus clientes? <br> Entre em contato conosco para marcarmos uma reunião e acertarmos os detalhes.</p>
-            <button class="botao-cor-secundaria botao-whatsapp">WhatsApp</button>
+            <button class="botao-cor-secundaria botao-whatsapp" onclick="onClickBotaoWhatsApp()">WhatsApp</button>
         </div>
 
         <div id="main__div-perguntas-frequentes">
@@ -232,11 +232,19 @@
                 </div>
             </div>
         </div>
+
+        <div id="main__div-cookies" class="ativo">
+            <p>Utilizamos cookies para melhorar sua experiência nesse site.</p>
+            <div>
+                <button id="div-cookies__botao-ver-config" onclick="onClickBotaoCookiesVerConfig()">Ver configurações</button>
+                <button id="div-cookies__botao-aceitar" class="botao-cor-secundaria" onclick="onClickBotaoCookiesAceito()">Aceito</button>
+            </div>
+        </div>
     </main>
 
     <footer>
         <section id="footer__sec-infos" class="texto-sombreado">
-            <p><span class="nome-logo">CAUEXPERIENCE</span> | CNPJ: 49.140.534/0001-02 | ARACAJU-SE | BRASIL | 2023</p>
+            <p><span class="nome-logo">CAUEXPERIENCE</span> | CNPJ: 49.140.534/0001-02 | ARACAJU-SE | BRASIL | 2023 | <a href="pagina-politica-privacidade.html" target="_blank">Política de privacidade e termos de serviço</a></p>
         </section>
         <section id="footer__sec-creditos">
             <p>Ícones por: 

@@ -120,8 +120,12 @@ p, button{
         font-size: 1.5em;
     }
 
+    h2{
+        font-size: 1.25em;
+    }
+
     p, button{
-        font-size: 0.9em;
+        font-size: 0.95em;
     }
 }
 
@@ -134,6 +138,7 @@ header{
         url("./imagens/IMG_3152_Acinzentado_3000x2000.png")
     ;
     background-size: cover;
+    background-position: top center;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
@@ -194,6 +199,7 @@ header{
     header{
         background-image:  linear-gradient(to bottom, #0000006b, #0000006b),
         url("./imagens/IMG_3152_Acinzentado_3000x2000.png");
+        background-position: center center;
     }
 
     #header__container-logo{
@@ -235,7 +241,7 @@ main{
     top: 0px;
     left: 0px;
     right: 0px;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
     display: none;
     font-size: 0.5em;
     z-index: 999;
@@ -255,11 +261,11 @@ main{
     background-color: rgba(0, 0, 0, 0.45);
 
     opacity: 0%;
-    transition: opacity 0.3s;
+    transition: opacity var(--transition-time);
 }
-#navbar-oculta__container.ativo{
+#navbar-oculta.ativo > #navbar-oculta__container{
     opacity: 100%;
-    transition: opacity 0.3s;
+    transition: opacity var(--transition-time);
 }
 
 #navbar-oculta__container > div{
@@ -294,6 +300,10 @@ main{
 }
 
 @media (max-width: 720px){
+    #navbar-oculta{
+        padding: 0.25rem 0.25rem;
+    }
+
     #navbar-oculta__botao-inicio{
         display: none;
     }
@@ -327,6 +337,7 @@ main{
     #div-jornada-cliente__container-texto{
         flex-direction: column;
         gap: 1rem;
+        font-size: 1.2em;
     }
 
     #div-jornada-cliente__container-texto > img{
@@ -365,9 +376,7 @@ main{
     padding: 2.0rem 1.25rem;
     border-radius: 3rem;
     border: 2px solid white;
-    
     backdrop-filter: blur(5px);
-    transition: transform var(--transition-time) ease-out;
 }
 .div-como-funciona-processo__card:hover{
     z-index: 99;
@@ -432,7 +441,6 @@ main{
 }
 
 #main__div-como-funciona-servico > p{
-    font-size: 1.1em;
     letter-spacing: 0.075em;
 }
 
@@ -469,11 +477,6 @@ main{
     backdrop-filter: blur(5px);
     /* transition: transform var(--transition-time), backdrop-filter var(--transition-time); */
 }
-/* .card-plano-servico:hover{
-    z-index: 99;
-    transform: scale(1.1);
-    backdrop-filter: blur(5px) brightness(350%);
-} */
 .card-plano-servico img{
     max-width: 96px;
 }
@@ -557,6 +560,7 @@ main{
     display: none;
     max-height: 0px;
     overflow: hidden;
+    font-size: 1.0em;
 }
 .div-pergunta.ativo > p{
     display: block;
@@ -571,6 +575,82 @@ main{
 
 
 
+/* ## DIV COOKIES ##################################################### */
+
+#main__div-cookies{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 2rem;
+    border: 2px solid white;
+    backdrop-filter: blur(5px);
+    background-color: #00080fb4;
+    box-shadow: 5px 5px 5px black;
+    text-align: center;
+
+    display: none;
+    opacity: 0%;
+    transition: opacity var(--transition-time);
+}
+#main__div-cookies.ativo{
+    display: flex;
+    opacity: 100%;
+}
+
+#main__div-cookies > div{
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    align-items: center;
+    padding: 0px 1.0rem;
+}
+
+#div-cookies__botao-ver-config{
+    font-size: 0.8em;
+    opacity: 70%;
+}
+
+#div-cookies__botao-aceitar{
+    padding: 0.5em 3.5em;
+    font-size: 1.1em;
+}
+
+@media (max-width: 720px){
+    #main__div-cookies{
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        left: 0px;
+        align-items: center;
+        gap: 0.5rem;
+        text-align: center;
+        padding: 1.0rem;
+        border-radius: 0px;
+        border: none;
+        border-top: 2px solid white;
+        font-size: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+        /* box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.5); */
+    }
+
+    #main__div-cookies > div{
+        gap: 3rem;
+    }
+
+    #div-cookies__botao-aceitar{
+        padding: 0.25em 1.5em;
+        font-size: 20px;
+    }
+}
+
+
+
 /* 
 ####### ESTILOS DO FOOTER ##############################################################################
 */
@@ -580,6 +660,7 @@ footer{
     text-align: center;
     letter-spacing: 0.075em;
     box-shadow: 0px -1rem 1rem var(--cor-principal-04);
+    font-size: 0.75em;
 }
 footer > section{
     padding: 0.75rem;
@@ -590,6 +671,9 @@ footer > section{
 }
 #footer__sec-infos .nome-logo{
     font-size: 0.9em;
+}
+#footer__sec-infos a{
+    text-decoration: none;
 }
 
 #footer__sec-creditos{
