@@ -20,6 +20,9 @@
 
     --cor-fundo-01: #00080F;
 
+    --imagem-fundo-01: url("./imagens/IMG_3152_Acinzentado_1500x1000_jpg.jpg"); /* 146kb */
+    --imagem-fundo-01-grande: url("./imagens/IMG_3152_Acinzentado_3000x2000.png"); /* 10mb */
+
     --cor-texto-01: #FFF;
 
     --padding-lateral-header: 1.5rem;
@@ -27,6 +30,8 @@
     --gap-elementos: 8rem;
     --padding-lateral-01: 5rem;
     --padding-lateral-01-mobile: 1rem;
+
+    --max-width: 1500px;
 }
 
 *{
@@ -38,13 +43,18 @@
     background-color: transparent;
 }
 
+html{
+    background-color: var(--cor-fundo-01);
+}
+
 body{
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     gap: var(--gap-elementos);
     scroll-behavior: smooth;
-    background-color: var(--cor-fundo-01);
+    max-width: var(--max-width);
+    margin: auto;
 }
 
 .negrito{
@@ -135,7 +145,7 @@ p, button{
 header{
     min-height: 100vh;
     background-image: linear-gradient(to bottom, #0000006b, #0000006b),
-        url("./imagens/IMG_3152_Acinzentado_3000x2000.png")
+        var(--imagem-fundo-01)
     ;
     background-size: cover;
     background-position: top center;
@@ -151,7 +161,8 @@ header{
     display: flex;
     justify-content: center;
     position: absolute;
-    width: 100%;
+    left: 0%;
+    right: 0%;
     padding-top: 2.0em;
 }
 
@@ -241,6 +252,8 @@ main{
     top: 0px;
     left: 0px;
     right: 0px;
+    max-width: var(--max-width);
+    margin: auto;
     padding: 0.5rem 0.5rem;
     display: none;
     font-size: 0.5em;
@@ -362,14 +375,52 @@ main{
 }
 
 #div-como-funciona-processo__container-cards{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 3rem;
+    display: grid;
+    grid-gap: 3rem;
+    justify-content: stretch;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+        'a b c'
+        'd e f'
+        'g g g';
+}
+
+.div-como-funciona-processo__card:nth-child(a){grid-area: a;}
+.div-como-funciona-processo__card:nth-child(b){grid-area: b;}
+.div-como-funciona-processo__card:nth-child(c){grid-area: c;}
+.div-como-funciona-processo__card:nth-child(d){grid-area: d;}
+.div-como-funciona-processo__card:nth-child(e){grid-area: e;}
+.div-como-funciona-processo__card:nth-child(f){grid-area: f;}
+.div-como-funciona-processo__card.ultimo{grid-area: g;}
+
+@media (max-width: 950px) {
+    #div-como-funciona-processo__container-cards{
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1.5rem;
+        grid-template-areas: 
+            'a b'
+            'c d'
+            'e f'
+            'g g';
+    }
+}
+
+@media (max-width: 650px) {
+    #div-como-funciona-processo__container-cards{
+        grid-template-columns: 1fr;
+        grid-gap: 1.5rem;
+        grid-template-areas: 
+            'a'
+            'b'
+            'c'
+            'd'
+            'e'
+            'f'
+            'g';
+    }
 }
 
 .div-como-funciona-processo__card{
-    max-width: 15rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -391,6 +442,7 @@ main{
     max-width: 100%;
     padding: 2.0rem 3.75rem;
 }
+
 
 
 
