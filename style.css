@@ -445,6 +445,19 @@ main{
     padding: 2.0rem 3.75rem;
 }
 
+@media (max-width: 720px){
+    #main__div-como-funciona-processo{
+        padding: 0 var(--padding-lateral-01-mobile);
+    }
+
+    .div-como-funciona-processo__card{
+        padding: 1.5rem 0.75rem;
+    }
+    .div-como-funciona-processo__card.ultimo{
+        padding: 1.5rem 1.75rem;
+    }
+}
+
 
 
 /* ## DIV 60 DIAS OTIMIZADOS ########################################## */
@@ -515,8 +528,8 @@ main{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: stretch;
     gap: 1.5rem;
+    padding: 0px var(--padding-lateral-01-mobile);
 }
 
 .card-plano-servico{
@@ -553,10 +566,22 @@ main{
     display: flex;
     gap: 1rem;
 }
+
 #container-cards__seta-baixo{
     max-width: 2.5rem;
     opacity: 90%;
     filter: multiply(var(--cor-principal-01));
+}
+
+@media (max-width: 650px){
+    #div-planos-servicos__container-cards{
+        justify-content: flex-start;
+    }
+
+    .card-plano-servico{
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 
