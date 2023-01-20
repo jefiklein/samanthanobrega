@@ -333,7 +333,7 @@ main{
 
 #main__div-jornada-cliente{
     background-image: linear-gradient(to bottom, var(--cor-principal-gradiente-01), var(--cor-principal-gradiente-02)),
-    url("./imagens/IMG_3152_Acinzentado_3000x2000.png");
+    var(--imagem-fundo-01);
 }
 
 #div-jornada-cliente__container-texto{
@@ -360,6 +360,8 @@ main{
         transform: rotate(90deg);
     }
 }
+
+
 
 /* ## DIV COMO FUNCIONA O PROCESSO ################################ */
 
@@ -445,7 +447,6 @@ main{
 
 
 
-
 /* ## DIV 60 DIAS OTIMIZADOS ########################################## */
 
 #main__div-60-dias{
@@ -487,11 +488,12 @@ main{
 }
 
 
+
 /* ## DIV COMO FUNCIONA O SERVICO ##################################### */
 
 #main__div-como-funciona-servico{
     background-image: linear-gradient(to bottom, #007be7ab, #004076ab),
-    url("./imagens/IMG_3152_Acinzentado_3000x2000.png");
+    var(--imagem-fundo-01);
 }
 
 #main__div-como-funciona-servico > p{
@@ -563,7 +565,7 @@ main{
 
 #main__div-fale-conosco{
     background-image: linear-gradient(to bottom, #007be7ab, #004076ab),
-    url("./imagens/IMG_3152_Acinzentado_3000x2000.png");
+    var(--imagem-fundo-01);
     font-size: 1.1em;
 }
 
