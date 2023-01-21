@@ -69,7 +69,8 @@ function onClickBotaoCookiesVerConfig(){
 
 
 function onClickBotaoCookiesAceito(){
-    document.cookie = "permissaoCookies=permitido; path=/"
+    // document.cookie = "permissaoCookies=permitido; path=/"
+    document.cookie = "permissaoCookies=permitido;expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/" //deixa esse cookie pra ser apagado sempre e ver como fica a barra de cookies
     document.getElementById("main__div-cookies").classList.remove("ativo")
 }
 

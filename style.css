@@ -143,7 +143,7 @@ p, button{
 /* ## ESTILOS DO HEADER ############################################################################## */
 
 header{
-    min-height: 100vh;
+    min-height: 95vh;
     background-image: linear-gradient(to bottom, #0000006b, #0000006b),
         var(--imagem-fundo-01)
     ;
@@ -208,8 +208,6 @@ header{
 
 @media (max-width: 720px){
     header{
-        background-image:  linear-gradient(to bottom, #0000006b, #0000006b),
-        url("./imagens/IMG_3152_Acinzentado_3000x2000.png");
         background-position: center center;
     }
 
@@ -599,13 +597,13 @@ main{
     font-size: 1.1em;
     border: 3px solid rgb(0, 255, 0);
     box-shadow: 0px 0px 5px 5px rgba(0, 255, 0, 0.5), inset 0px 0px 10px rgba(0, 255, 0);
-    animation: glow 0.3s ease-in-out 0s infinite;
+    animation: glow 0.8s ease-in-out 0s infinite;
     animation-direction: alternate;
 }
 
 @keyframes glow {
     from{
-        box-shadow: 0px 0px 10px 5px rgba(0, 255, 0, 0.5), inset 0px 0px 10px rgba(0, 255, 0);
+        box-shadow: 0px 0px 10px 5px rgba(0, 255, 0, 0.0), inset 0px 0px 10px rgba(0, 255, 0, 0.0);
     }
     to{
         box-shadow: 0px 0px 20px 10px rgba(0, 255, 0, 0.5), inset 0px 0px 10px rgba(0, 255, 0);
