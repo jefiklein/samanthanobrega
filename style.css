@@ -145,7 +145,7 @@ p, button{
 /* ## ESTILOS DO HEADER ############################################################################## */
 
 header{
-    min-height: 95vh;
+    min-height: 94vh;
     background-image: linear-gradient(to bottom, #0000006b, #0000006b),
         var(--imagem-fundo-01)
     ;
