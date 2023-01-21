@@ -21,6 +21,7 @@
     --cor-fundo-01: #00080F;
 
     --imagem-fundo-01: url("./imagens/IMG_3152_Acinzentado_1500x1000_jpg.jpg"); /* 146kb */
+    --imagem-fundo-01-mobile: url("./imagens/Background_mobile_800x1000_jpg.jpg"); /* 95kb */
     --imagem-fundo-01-grande: url("./imagens/IMG_3152_Acinzentado_3000x2000.png"); /* 10mb */
 
     --cor-texto-01: #FFF;
@@ -145,7 +146,7 @@ p, button{
 /* ## ESTILOS DO HEADER ############################################################################## */
 
 header{
-    min-height: 94vh;
+    min-height: 100vh;
     background-image: linear-gradient(to bottom, #0000006b, #0000006b),
         var(--imagem-fundo-01)
     ;
@@ -200,8 +201,17 @@ header{
     animation-direction: alternate;
 }
 
+@media (max-width: 1000px){
+    header{
+        min-height: 94vh; /* para a barra da url n baguncar a setinha do header */
+    }
+}
+
 @media (max-width: 800px){
     #header__container-conteudo{
+        /* background-image: linear-gradient(to bottom, #0000006b, #0000006b),
+        var(--imagem-fundo-01-mobile)
+        ; */
         text-align: center;
         align-items: center;
         max-width: 100vw;
@@ -590,11 +600,20 @@ main{
     animation-direction: alternate;
 }
 
+@media (max-width: 800px){
+    .botao-whatsapp{
+        border: 2px solid rgb(0, 255, 0);
+    }
+    
+}
+
 @keyframes glow {
     from{
-        box-shadow: 0px 0px 10px 5px rgba(0, 255, 0, 0.0), inset 0px 0px 10px rgba(0, 255, 0, 0.0);
+        filter: brightness(75%);
+        box-shadow: 0px 0px 10px 5px rgba(0, 255, 0, 0.3), inset 0px 0px 10px rgba(0, 255, 0, 0.4);
     }
     to{
+        filter: brightness(90%);
         box-shadow: 0px 0px 20px 10px rgba(0, 255, 0, 0.7), inset 0px 0px 15px rgba(0, 255, 0);
     }
 }
