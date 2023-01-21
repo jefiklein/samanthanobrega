@@ -597,6 +597,19 @@ main{
 .botao-whatsapp{
     padding: 0.75em 1.5em;
     font-size: 1.1em;
+    border: 3px solid rgb(0, 255, 0);
+    box-shadow: 0px 0px 5px 5px rgba(0, 255, 0, 0.5), inset 0px 0px 10px rgba(0, 255, 0);
+    animation: glow 0.3s ease-in-out 0s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes glow {
+    from{
+        box-shadow: 0px 0px 10px 5px rgba(0, 255, 0, 0.5), inset 0px 0px 10px rgba(0, 255, 0);
+    }
+    to{
+        box-shadow: 0px 0px 20px 10px rgba(0, 255, 0, 0.5), inset 0px 0px 10px rgba(0, 255, 0);
+    }
 }
 
 
