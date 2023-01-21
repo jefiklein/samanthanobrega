@@ -36,7 +36,7 @@ function onClickDivPergunta(_id){
 
 function onClickBotaoWhatsApp(){
     gtag_report_conversion()
-    window.open("https://api.whatsapp.com/send?phone=557197241785&text=Olá. %20Eu%20tenho interesse%20em%20gestão%20de%20trafego.", "_blank").focus();                    
+    window.open("https://api.whatsapp.com/send?phone=557583687425&text=Olá.%20Eu%20tenho%20interesse%20em%20gestão%20de%20trafego.", "_blank").focus();                    
 }
 
 function gtag_report_conversion(url) {
