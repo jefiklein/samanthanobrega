@@ -34,11 +34,6 @@ function onClickDivPergunta(_id){
 }
 
 
-function onClickBotaoWhatsApp(){
-    gtag_report_conversion()
-    window.open("https://api.whatsapp.com/send?phone=557583687425&text=Olá.%20Eu%20tenho%20interesse%20em%20gestão%20de%20trafego.", "_blank").focus();                    
-}
-
 function gtag_report_conversion(url) {
     var callback = function () {
       if (typeof(url) != 'undefined') {
@@ -50,6 +45,12 @@ function gtag_report_conversion(url) {
         'event_callback': callback
     });
     return false;
+}
+
+function onClickBotaoWhatsApp(){
+    window.open("https://api.whatsapp.com/send?phone=557583687425&text=Olá.%20Eu%20tenho%20interesse%20em%20gestão%20de%20trafego.", "_blank").focus();                    
+    // gtag_report_conversion('https://wa.me/5575998588495')
+    return gtag_report_conversion()
 }
 
 
@@ -70,8 +71,8 @@ function onClickBotaoCookiesVerConfig(){
 
 
 function onClickBotaoCookiesAceito(){
-    // document.cookie = "permissaoCookies=permitido; path=/"
-    document.cookie = "permissaoCookies=permitido;expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/" //deixa esse cookie pra ser apagado sempre e ver como fica a barra de cookies
+    document.cookie = "permissaoCookies=permitido; path=/"
+    // document.cookie = "permissaoCookies=permitido;expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/" //deixa esse cookie pra ser apagado sempre e ver como fica a barra de cookies
     document.getElementById("main__div-cookies").classList.remove("ativo")
 }
 
