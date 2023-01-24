@@ -595,6 +595,7 @@ main{
 .botao-whatsapp{
     padding: 0.75em 1.5em;
     font-size: 1.1em;
+    text-decoration: none;
     border: 3px solid rgb(0, 255, 0);
     animation: glow 0.8s ease-in-out 0s infinite;
     animation-direction: alternate;

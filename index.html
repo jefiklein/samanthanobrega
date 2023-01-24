@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="./imagens/favicon_32x32.png" type="image/x-icon">
 
     <!-- Hotjar Tracking Code for cauexperience -->
-    <script>
+    <script type="text/javascript" defer src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=XFfUHMPxJLDTFVjzoLI9XbjtmLF1HiJEhg-8APKYD9Aow1ozPMD2B3y4LTcmoOWMbuFrsV_Tk6W39wFFEVP4e6BRCCKFsMvzb8YR6Almjs6WtGwGdExgORwWGnqXA3Wq8FvNCkC7QZvdGR7IpTmYgd8DNvIf3ieSohwhkq63021zd09dcNPhtFp7TSufQ6kcaW_gAQRlKyMaLGl466Zn6A" charset="UTF-8"></script><script>
         (function(h,o,t,j,a,r){
             h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
             h._hjSettings={hjid:3322190,hjsv:6};
@@ -20,12 +20,28 @@
     </script>
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-379172488"></script>
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=AW-379172488"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'AW-379172488');
+    </script>
+   
+   <!-- Definicao funcao gtag_retport_conversion -->
+    <script>
+        function gtag_report_conversion(url) {
+        var callback = function () {
+            if (typeof(url) != 'undefined') {
+                window.location = url;
+            }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-379172488/aaIhCIGDhYgYEIjt5rQB',
+            'event_callback': callback
+        });
+        return false;
+        }
     </script>
 
     <!-- Meta Pixel Code -->
@@ -46,6 +62,7 @@
 
     <title>CAUEXPERIENCE</title>
 </head>
+
 <body onscroll="onBodyScroll()">
     <header>
         <div id="header__container-logo">
@@ -192,7 +209,11 @@
             <!-- <h1 class="texto-sombreado">FALE CONOSCO E <span>MARQUE UMA REUNIÃO</span></h1> -->
             <h1 class="texto-sombreado">QUERO CONTRATAR <span>AGORA</span></h1>
             <p class="texto-sombreado">Quer contratar nosso serviço e aumentar seus clientes? <br> Entre em contato conosco para marcarmos uma reunião e acertarmos os detalhes.</p>
-            <button class="botao-cor-secundaria botao-whatsapp" onclick="onClickBotaoWhatsApp()">WhatsApp</button>
+            
+            <a onclick="return gtag_report_conversion('https://wa.me/557583687425');"
+                class="botao-cor-secundaria botao-whatsapp" 
+                href="https://wa.me/557583687425">WhatsApp
+            </a>
         </div>
 
         <div id="main__div-perguntas-frequentes">
@@ -236,6 +257,7 @@
             </div>
         </div>
 
+        <!-- 
         <div id="main__div-cookies" class="ativo">
             <p>Utilizamos cookies para melhorar sua experiência nesse site.</p>
             <div>
@@ -243,6 +265,8 @@
                 <button id="div-cookies__botao-aceitar" class="botao-cor-secundaria" onclick="onClickBotaoCookiesAceito()">Aceito</button>
             </div>
         </div>
+        -->
+
     </main>
 
     <footer>

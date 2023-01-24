@@ -1,7 +1,7 @@
 const navbar_oculta = document.getElementById("navbar-oculta")
 const navbar_oculta_container = document.getElementById("navbar-oculta__container")
 
-showCookiesDiv()
+// showCookiesDiv()
 
 
 function onBodyScroll(){
@@ -34,47 +34,34 @@ function onClickDivPergunta(_id){
 }
 
 
-function gtag_report_conversion(url) {
-    var callback = function () {
-      if (typeof(url) != 'undefined') {
-        window.location = url;
-      }
-    };
-    gtag('event', 'conversion', {
-        'send_to': 'AW-379172488/aaIhCIGDhYgYEIjt5rQB',
-        'event_callback': callback
-    });
-    return false;
-}
-
-function onClickBotaoWhatsApp(){
-    window.open("https://api.whatsapp.com/send?phone=557583687425&text=Olá.%20Eu%20tenho%20interesse%20em%20gestão%20de%20trafego.", "_blank").focus();                    
-    // gtag_report_conversion('https://wa.me/5575998588495')
-    return gtag_report_conversion()
-}
+// function onClickBotaoWhatsApp(){
+//     window.open("https://api.whatsapp.com/send?phone=557583687425&text=Olá.%20Eu%20tenho%20interesse%20em%20gestão%20de%20trafego.", "_blank").focus();                    
+//     // gtag_report_conversion('https://wa.me/5575998588495')
+//     return gtag_report_conversion()
+// }
 
 
-function showCookiesDiv(){
-    let cookiesLength = document.cookie.length
-    if(cookiesLength === 0){
-        document.getElementById("main__div-cookies").classList.add("ativo")
-    }
-    else{
-        document.getElementById("main__div-cookies").classList.remove("ativo")
-    }
-}
+// function showCookiesDiv(){
+//     let cookiesLength = document.cookie.length
+//     if(cookiesLength === 0){
+//         document.getElementById("main__div-cookies").classList.add("ativo")
+//     }
+//     else{
+//         document.getElementById("main__div-cookies").classList.remove("ativo")
+//     }
+// }
 
 
-function onClickBotaoCookiesVerConfig(){
-    window.open("./pagina-politica-privacidade.html", '_blank');
-}
+// function onClickBotaoCookiesVerConfig(){
+//     window.open("./pagina-politica-privacidade.html", '_blank');
+// }
 
 
-function onClickBotaoCookiesAceito(){
-    document.cookie = "permissaoCookies=permitido; path=/"
-    // document.cookie = "permissaoCookies=permitido;expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/" //deixa esse cookie pra ser apagado sempre e ver como fica a barra de cookies
-    document.getElementById("main__div-cookies").classList.remove("ativo")
-}
+// function onClickBotaoCookiesAceito(){
+//     document.cookie = "permissaoCookies=permitido; path=/"
+//     // document.cookie = "permissaoCookies=permitido;expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/" //deixa esse cookie pra ser apagado sempre e ver como fica a barra de cookies
+//     document.getElementById("main__div-cookies").classList.remove("ativo")
+// }
 
 
 
