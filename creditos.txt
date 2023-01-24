@@ -30,7 +30,24 @@ icone google:
 
 
 
+    <!-- Hotjar Tracking Code for cauexperience -->
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=XFfUHMPxJLDTFVjzoLI9XbjtmLF1HiJEhg-8APKYD9Aow1ozPMD2B3y4LTcmoOWMbuFrsV_Tk6W39wFFEVP4e6BRCCKFsMvzb8YR6Almjs6WtGwGdExgORwWGnqXA3Wq8FvNCkC7QZvdGR7IpTmYgd8DNvIf3ieSohwhkq63021zd09dcNPhtFp7TSufQ6kcaW_gAQRlKyMaLGl466Zn6A" charset="UTF-8"></script><script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:3322190,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
 
+
+    
+   
+   
+
+    
 
 
 
