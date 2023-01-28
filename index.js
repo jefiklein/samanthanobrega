@@ -15,7 +15,7 @@ function onBodyScroll(){
 
 
 function onClickBotaoVerPlanos(){
-    const div_orcamento = document.getElementById("main__div-planos-servicos")
+    const div_orcamento = document.getElementById("main__section-05")
     // const offset = div_orcamento.getBoundingClientRect().top - document.body.getBoundingClientRect().top - navbar_oculta.offsetHeight
     const offset = div_orcamento.getBoundingClientRect().top - document.body.getBoundingClientRect().top - 80 //esse 80 eh a altura da navbar, se deixar pra usar o .offsetHeight, o botao da capa nao vai funcionar pois na hora q ele for pressionado, a navbar terah altura 0
     
