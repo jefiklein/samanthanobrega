@@ -1,7 +1,15 @@
 const navbar_oculta = document.getElementById("navbar-oculta")
 const navbar_oculta_container = document.getElementById("navbar-oculta__container")
 
-showCookiesDiv()
+let elementos_fade_in = []
+
+
+for(let i=0; i<document.getElementsByClassName("fade-in").length; i++){
+    elementos_fade_in.push(document.getElementsByClassName("fade-in")[i])
+}
+
+mostrarCookiesDiv()
+mostrarElementosScroll()
 
 
 function onBodyScroll(){
@@ -10,6 +18,21 @@ function onBodyScroll(){
     }
     else{
         navbar_oculta.classList.remove("ativo")
+    }
+    mostrarElementosScroll()
+}
+
+
+function mostrarElementosScroll(){
+    if(elementos_fade_in.length > 0){
+        //distancia entre o topo do elemento e o topo da pagina
+        while(elementos_fade_in[0].getBoundingClientRect().top < window.innerHeight * 0.85){
+            elementos_fade_in[0].classList.add("fade-in-ativo")
+            elementos_fade_in.shift()
+            if(elementos_fade_in.length === 0){
+                break
+            }
+        }
     }
 }
 
@@ -34,14 +57,7 @@ function onClickDivPergunta(_id){
 }
 
 
-// function onClickBotaoWhatsApp(){
-//     window.open("https://api.whatsapp.com/send?phone=557583687425&text=Olá.%20Eu%20tenho%20interesse%20em%20gestão%20de%20trafego.", "_blank").focus();                    
-//     // gtag_report_conversion('https://wa.me/5575998588495')
-//     return gtag_report_conversion()
-// }
-
-
-function showCookiesDiv(){
+function mostrarCookiesDiv(){
     let cookiesLength = document.cookie.length
     if(cookiesLength === 0){
         document.getElementById("main__div-cookies").classList.add("ativo")
